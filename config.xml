@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<config>
+
+<!--
+
+ceci fera apparaitre le bouton "paramètres" dans l'extensions
+
+-->
+	<fieldset name="component"
+		label="Location de materiel"
+		description="Droits de location de matériel"
+	>
+
+	</fieldset>
+
+<!--
+
+Celui va donc afficher le panneau de gestion des permissions créées 
+dans le fichier access xml
+
+-->
+	<fieldset name="permissions"
+		description=""
+		label="permissions"
+	>
+
+		<field name="rules" type="rules"
+			component="com_location"
+			filter="rules"
+			validate="rules"
+			label="JCONFIG_PERMISSIONS_LABEL"
+			section="component" />
+	</fieldset>
+</config>

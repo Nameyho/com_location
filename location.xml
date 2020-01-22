@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?> 
+<!--
+données par rapport au composant : nom,date,version,etc..
+-->
+<extension type="component" version="3.0" method="upgrade">
+<name>com_location</name>
+<author> Nameyho</author>
+<creationdate> Octobre 2019 </creationdate>
+<version>1.0.0</version>
+<description>Extension de location de materiel. Pour Joomla 3.X</description>
+
+<!--
+script d'installatio, desinstallation, mise à jours,etc..
+-->
+
+<scriptfile>script.php</scriptfile>
+
+<!--
+indiquation à joomla où trouver les fichiers SQL dans le but 
+de créer les tables et aussi les supprimer lors de la désinstallation
+-->
+<install>
+    <sql>
+        <file driver="mysql"
+    charset="utf8">sql/install.mysql.utf8.sql </file>
+    </sql>
+    </install>
+<uninstall>
+    <sql>
+        <file driver="mysql"
+        charset="utf8">sql/uninstall.mysql.utf8.sql</file>
+    </sql>
+</uninstall>
+
+<!--
+Ici on renseigne à Joomla quels fichier charger et à deplacer
+dans les dossiers du site.
+-->
+<files folder="site">
+    <filename>index.html</filename>
+		<filename>index.html</filename>
+		<filename>location.php</filename>
+		<filename>controller.php</filename>
+		<folder>views</folder>
+        <folder>controllers</folder>
+        <folder>models</folder>
+</files>
+
+
+<administration>
+    <menu img="class:categories">Location de matériels</menu>
+    <!--
+le tag menu permet la création d'un onglet dans le panneau 
+d'administration qui donnera accés au composant
+-->
+    <files folder="admin">
+    <filename>index.html</filename>
+    <filename>access.xml</filename>
+    <filename>config.xml</filename>
+    <filename>controller.php</filename>
+    <filename>location.php</filename>
+
+
+    
+    <folder>models</folder>
+    <folder>views</folder>
+    <folder>controllers</folder>
+    <folder>sql</folder>
+    <folder>tables</folder>
+    <folder>helpers</folder>
+        
+    </files>
+   
+</administration>
+</extension>
