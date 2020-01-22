@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<form
+		addrulepath="/administrator/components/com_location/models/rules"
+>
+	<field name="id" type="text"  label="JGLOBAL_FIELD_ID_LABEL"
+		   readonly="true" class="readonly"
+		   description="JGLOBAL_FIELD_ID_DESC"/>
+
+	<field
+			name="idmat"
+			type="sql"
+			label="Choissisez votre matériel"
+			query="SELECT id, nom FROM #__materiel"
+			key_field="id"
+			value_field="nom"
+			class="input-xlarge input-medium-text"
+
+
+	/>
+	<field name="nombres" type="text" default=""
+		   label="Nombres"
+		   description=""
+		   first="0"
+		   last="SELECT nombre FROM #__materiel"
+		   required="true"
+		   step="1"/>
+
+
+
+	<field name="etat" type="hidden"
+		   label="JGLOBAL_FIELD_CREATED_BY_LABEL"
+		   filter="set" />
+
+	<field
+			name="idtranche"
+			type="sql"
+			label="Choissisez votre tranche horaire"
+			query="SELECT id, datedebut FROM #__tranche"
+			key_field="id"
+			value_field="datedebut"
+			class="input-xlarge input-medium-text"
+
+
+	/>
+
+	<field name="dateloc" type="calendar" default="NOW" label="Choissisez la journée" description=""
+		   class="Bootstrap2 Relatives sizing" required="true" filter="user_utc" timeformat="24"
+		   todaybutton="false" filltable="false" translateformat="true" />
+
+
+
+
+
+</form>
+

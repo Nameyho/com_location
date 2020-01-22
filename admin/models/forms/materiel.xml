@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<form>
+<fieldset>
+	<field name="id" type="text"  label="JGLOBAL_FIELD_ID_LABEL"
+		   readonly="true" class="readonly"
+		   description="JGLOBAL_FIELD_ID_DESC"/>
+
+	<field name="nom" type="text" class="inputbox"
+		   size="50" label="Nom du matériel"
+		   description="nom du matériel" required="true"></field>
+
+
+	<field name="nombre" type="integer" default=""
+		   label="Nombres"
+		   description="COM_MATERIEL_FIELD_TITLE_DESC"
+		   first="0"
+		   last="30"
+		   step="1"
+		   required="true"
+	/>
+	<field name="description" type="textarea"
+		   class ="inputbox"
+		   row="3"
+		   cols="30"
+		   label="Description du matèriel"
+		   description="Description du matèriel"
+
+	/>
+
+
+
+</fieldset>
+</form>

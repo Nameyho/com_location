@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<form>
+	<!--
+		Ceci va créer un chant de type texte 
+		comme il va être créer par la suite lors de l'inscription
+		il sera nulle mais sera rempli lors de la modification
+		c'est d'ailleur pour cela que le chant est en readonly 
+		empéchant toute modification.
+		le nom du champ doit correspondre au nom dans la base de 
+		données sinon les insertions et les récupérations de données
+		ne correspondront pas.
+	-->
+	<field name="id" type="text"  label="JGLOBAL_FIELD_ID_LABEL"
+		   readonly="true" class="readonly"
+		   description="JGLOBAL_FIELD_ID_DESC"/>
+
+		<!--
+ce champ  à pour but de faire un champ déroulant avec des champs
+récupérer suite à une requête dans une base de données.
+le key-field  sera le champ qui définira l'ordre
+et le value-field sera le champ qui sera affiché.
+le champ class sera la classe qui servira a choisi le mode d'affichage
+	-->
+	<field
+			name="idmat"
+			type="sql"
+			label="Choissisez votre matériel"
+			query="SELECT id, nom FROM #__materiel"
+			key_field="id"
+			value_field="nom"
+			class="input-xlarge input-medium-text"
+
+
+	/>
+	<field name="nombres" type="text" default=""
+		   label="Nombres"
+		   description=""
+		   first="0"
+		   last="SELECT nombre FROM #__materiel"
+		   required="true"
+		   step="1"/>
+
+	<!--
+		ce champ va permettre à l'admin d'affecter un utilisateur à la location
+	-->
+	<field name="iduser" type="user"
+		   label="JGLOBAL_FIELD_CREATED_BY_LABEL"
+		   filter="set"
+			required="true"/>
+
+	<field name="etat" type="hidden"
+		   label="JGLOBAL_FIELD_CREATED_BY_LABEL"
+		   filter="set" />
+
+<!--
+				dans ce champ c'est aussi un champ de select sql
+				où j'ai concaténé et formater l'heure afin de n'afficher
+				que l'heure et les minutes
+			-->
+	<field
+			name="idtranche"
+			type="sql"
+			label="Choissisez votre tranche horaire"
+			query="SELECT id,  CONCAT(time_format(datedebut,'%HH%i'),' - ',time_format(datefin,'%HH%I')) AS date FROM #__tranche"
+			key_field="id"
+			value_field="date"
+			class="input-xlarge input-medium-text"
+
+	/>
+	<!--
+		ce champ va afficher un calendrier où on pourra choisir le jour
+		l'option required oblige a choisir un jour, filltable permet de remplir ou 
+		non le calendrier avec des jours hors du mois
+	-->
+	<field name="dateloc" type="calendar" label="Choissisez la journée" description=""
+		   class="Bootstrap2 Relatives sizing" required="true"
+		   todaybutton="false" filltable="false" />
+
+</form>
+

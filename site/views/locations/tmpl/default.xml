@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<metadata>
+	<layout title="vue des résérvations" option="com_materiel_materiel_view_default_option">
+		<message>
+			Location de materiel
+		</message>
+	</layout>	
+</metadata>

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<form
+		addrulepath="/administrator/components/com_helloworld/models/rules"
+>
+	<fieldset
+			name="location"
+			label="Ajout de Location de materiel"
+	>
+		<field
+				name="id"
+				type="hidden"
+		/>
+
+		<field name="datedebut" type="calendar"  label="Renseignez une heure de début" description=""
+			   class="input-medium" required="true" filter="user_utc" format="%H:%M:%S"
+			 showtime="true" timeformat="24"
+		/>
+
+		<field name="datefin" type="calendar"  label="Renseignez une heure de fin" description=""
+			   class="input-medium" required="true" filter="user_utc" format="%H:%M:%S"
+			   showtime="true" timeformat="24"
+		/>
+
+		<field name="info" type="note"
+			   label="Consignes"
+			   description=" Afin d'établir une bonne tranche il faut :"/>
+
+
+		<field name="info1" type="note" description="- Entrez l'heure avec le calendrier en ignorant la date." />
+		<field name="info2" type="note" description="- Si vous écrivez l'heure directement celle-ci risque de pas être bien enregistré dans la base de données" />
+		<field name="info3" type="note" description="- En fonction du serveur et de son fuseau horaire,il est possible que l'heure entrée et celle qui sera enregistrée subisse un retrait ou ajout d'une heure" />
+	</fieldset>
+</form>

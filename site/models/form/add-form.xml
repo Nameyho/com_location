@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+
+<form>
+	addrulepath="/administrator/components/com_materiel/models/rules"
+
+
+	<field name="subformloc" type="subform"
+		   multiple="true"
+		   label="choix du materiel"
+		   description=""
+		   min="1"
+			layout="joomla.form.field.subform.repeatable-table"
+	>
+<form>
+	<field
+			name="materiel"
+			type="sql"
+			default="10"
+			label="Choissisez votre matériel"
+			query="SELECT idmat, concat(nom ,'(disponible(s) : ' ,nombre,')') AS nom FROM #__materiel"
+			key_field="idmat"
+			value_field="nom"
+			class="input-xlarge input-medium-text"
+
+	/>
+
+	<field name="nombres" type="text" default=""
+		   label="Nombres"
+		   description=""
+		   first="0"
+		   last="SELECT nombre FROM #__materiel"
+		   step="1"
+	/>
+</form>
+	</field>
+	<field name="id" type="user"
+		   label="JGLOBAL_FIELD_CREATED_BY_LABEL"
+
+		   filter="set" />
+
+	<field name="etat" type="hidden"
+		   label="JGLOBAL_FIELD_CREATED_BY_LABEL"
+
+		   filter="set" />
+
+	<field name="heuredebut" type="calendar" default="NOW" label="Choissisez une heure de début" description=""
+		   class="Bootstrap2 Relatives sizing" required="true" filter="user_utc" timeformat="24"
+		   showtime="true" todaybutton="false" filltable="false" translateformat="true" />
+
+	<field name="heurefin" type="calendar" default="NOW" label="Choissisez une heure de fin" description=""
+		   class="Bootstrap2 Relatives sizing" required="true" filter="user_utc" timeformat="24"
+		   showtime="true" todaybutton="false" filltable="false" translateformat="true" />
+
+
+
+
+</form>
+
