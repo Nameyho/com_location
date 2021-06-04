@@ -1,11 +1,8 @@
 # com_location
 
-Ceci est la première version d'un extension Joomla servant a la reservation de matériel 
+Extension Joomla Permettant :
 
-ce que je compte rajouter quand j'en aurais la possibilité
-
--pagination
-
--filtre
-
--tris des colonnes
+- La création d'une liste de matériel
+- Réservation de matériels avec choix de début/fin ainsi que le nombre
+- avertissement si plus de stock
+ -Panel d'administration
